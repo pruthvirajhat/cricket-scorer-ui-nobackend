@@ -1,8 +1,9 @@
 import React from 'react';
+import Extras from "../extras/Extras";
 
 const GameDetails = () => (
   <div>
-    This is the game details page
+      <Extras/>
   </div>
 );
 
