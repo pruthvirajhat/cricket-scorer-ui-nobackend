@@ -1,9 +1,11 @@
 import React from 'react';
 import {Container,Row,Col, Table} from 'reactstrap';
 import {connect} from "react-redux";
+import getBatsmenData from './getBatsmenData'
 
 const BatsmanDetails = (props) => {
-    //const batsmenData = getBatsmenData(props.overs);
+    const batsmenData = getBatsmenData(props.overs);
+
     return (<Container>
         <label><b>Batting Table</b></label>
         <br/>
@@ -19,7 +21,7 @@ const BatsmanDetails = (props) => {
             </tr>
             </thead>
             <tbody>
-            {props.batsmen.map(batsman => {
+            {batsmenData.map(batsman => {
                 return <tr>
                     <th scope="row">{batsman.Name}</th>
                     <td>{batsman.Runs}</td>
@@ -36,29 +38,7 @@ const BatsmanDetails = (props) => {
 
 export const mapStateToProps = (state) => {
     return {
-        batsmen: getBatsmenData(state.overs)
-    }
-
-    function getBatsmenData(data)
-    {
-        return [
-            {
-                "Name": "Dilip",
-                "Runs": 5,
-                "Balls": 0,
-                "Fours": 44,
-                "Sixes": 1,
-                "StrikeRate":100
-            },
-            {
-                "Name": "Dilip1",
-                "Runs": 5,
-                "Balls": 0,
-                "Fours": 44,
-                "Sixes": 1,
-                "StrikeRate":100
-            }
-        ]
+        overs: state.overs
     }
 }
 

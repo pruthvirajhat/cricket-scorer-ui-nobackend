@@ -2,14 +2,12 @@ import React from 'react';
 import {Container, Row, Col, Table} from 'reactstrap';
 import {connect} from "react-redux";
 import {recordExtras} from "../extras/actions";
+import getBatsmenData from "../batsmanDetails/getBatsmenData";
 
-class BowlerDetails extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+const BowlerDetails = (props) => {
+    const bowlerData = getBatsmenData(props.overs)
 
-    render() {
-        return (
+    return (
             <Container>
                 <label><b>Bowling Table</b></label>
                 <br/>
@@ -24,7 +22,7 @@ class BowlerDetails extends React.Component {
                     </tr>
                     </thead>
                     <tbody>
-                    { this.props.bowlers.map(bowler => {
+                    { bowlerData.map(bowler => {
                     return <tr>
                     <th scope="row">{bowler.Name}</th>
                     <td>{bowler.Overs}</td>
@@ -36,33 +34,12 @@ class BowlerDetails extends React.Component {
                     </tbody>
                 </Table>
             </Container>
-        )
+        );
     }
-}
 
 export const mapStateToProps = (state) => {
     return {
-        bowlers: getBowlersData(state.overs)
-    }
-
-    function getBowlersData(data)
-    {
-        return [
-            {
-                "Name": "Manisha",
-                "Overs": 5,
-                "Maiden": 0,
-                "Runs": 44,
-                "Wickets": 1
-            },
-            {
-                "Name": "Manisha123",
-                "Overs": 5,
-                "Maiden": 0,
-                "Runs": 44,
-                "Wickets": 1
-            }
-        ]
+        overs: state.overs
     }
 }
 
