@@ -84,7 +84,12 @@ class BowlerDetails extends React.Component {
 
 export const mapStateToProps = (state) => {
     return {
-        bowlers: [
+        bowlers: getBowlersData(state.overs)
+    }
+
+    function getBowlersData(data)
+    {
+        return [
             {
                 "Name": "Manisha",
                 "Overs": 5,
@@ -93,13 +98,13 @@ export const mapStateToProps = (state) => {
                 "Wickets": 1
             },
             {
-                "Name": "Manisha1",
+                "Name": "Manisha123",
                 "Overs": 5,
                 "Maiden": 0,
                 "Runs": 44,
                 "Wickets": 1
             }
-            ]
+        ]
     }
 }
 

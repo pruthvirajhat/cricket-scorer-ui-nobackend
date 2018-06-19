@@ -3,9 +3,9 @@ import ScoreBoard from '../scorer/Scoreboard';
 import BowlerDetails from '../bowlerDetails/BowlerDetails';
 import BatsmanDetails from '../batsmanDetails/BatsmanDetails';
 
-const GameDetails = () => (
+const GameDetails = (props) => (
   <div>
-      <ScoreBoard/>
+      {/*<ScoreBoard game={props.game} score={props.score}/>*/}
   <br/>
       <BatsmanDetails/>
       <br/>
