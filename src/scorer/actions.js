@@ -1,3 +1,6 @@
+import { Routes } from '../routes/routes';
+import history from '../routes/history';
+
 export const NEXT_BALL = 'NEXT_BALL';
 export const SELECT_PLAYER = 'SELECT_PLAYER';
 export const SELECT_RUNS = 'SELECT_RUNS';
@@ -15,3 +18,8 @@ export function selectRunsAction(runs) {
     payload: runs,
   };
 }
+
+export const navigateToStatsAction = () => () => {
+  history.push(Routes.GAME_DETAILS);
+};
+
