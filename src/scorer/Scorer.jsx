@@ -9,14 +9,13 @@ const Scorer = (props) => (
   <div>
     <Scoreboard game={props.game} score={props.score}/>
       <br/>
-      <div align="right">
+      <div align="center">
         <Button color="primary" onClick={props.navigateToStats}>Statistics</Button>
       </div>
       <br/>
       <PlayerSelector/>
   </div>
 );
-
 
 export const mapStateToProps = (state) => {
     return {

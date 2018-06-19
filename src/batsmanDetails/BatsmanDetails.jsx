@@ -7,7 +7,7 @@ const BatsmanDetails = (props) => {
     return (<Container>
         <label><b>Batting Table</b></label>
         <br/>
-        <Table>
+        <Table responsive>
             <thead>
             <tr>
                 <th>Batsman</th>
@@ -19,13 +19,6 @@ const BatsmanDetails = (props) => {
             </tr>
             </thead>
             <tbody>
-            {/*<tr>*/}
-            {/*<th scope="row">Wasim</th>*/}
-            {/*<td>3</td>*/}
-            {/*<td>0</td>*/}
-            {/*<td>40</td>*/}
-            {/*<td>1</td>*/}
-            {/*</tr>*/}
             {props.batsmen.map(batsman => {
                 return <tr>
                     <th scope="row">{batsman.Name}</th>
