@@ -1,22 +1,20 @@
-import {initialState as gameState} from '../newGame/reducer'
+import { initialState as gameState } from '../newGame/reducer';
 
 export const initialState = {
-    team1:
+  team1:
         {
-            wickets: 0,
-            overs: 0,
-            score: 0
+          wickets: 0,
+          overs: 0,
+          score: 0,
         },
-    team2: {
-        wickets: 0,
-        overs: 0,
-        score: 0
-    },
-    currentlyBattingTeamName: gameState.team1.name
+  team2: {
+    wickets: 0,
+    overs: 0,
+    score: 0,
+  },
+  currentlyBattingTeamName: gameState.team1.name,
 };
 
-const reducer = (state = initialState, action) => {
-    return state;
-};
+const reducer = (state = initialState) => state;
 
 export default reducer;

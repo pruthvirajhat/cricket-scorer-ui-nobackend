@@ -1,22 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Scoreboard from './Scoreboard';
-import {connect} from 'react-redux';
-import PlayerSelector from "./PlayerSelector";
+import PlayerSelector from './PlayerSelector';
+import RunsSelector from './RunsSelector';
 
-const Scorer = (props) => (
+const Scorer = props => (
   <div>
-    <Scoreboard game={props.game} score={props.score}/>
-      <PlayerSelector/>
+    <Scoreboard game={props.game} score={props.score} />
+    <PlayerSelector />
+    <RunsSelector />
   </div>
 );
 
 
+export const mapStateToProps = state => ({
+  score: state.scoreInformation,
+  game: state.gameInformation,
+});
 
-export const mapStateToProps = (state) => {
-    return {
-        score: state.scoreInformation,
-        game:state.gameInformation
-    }
-}
+Scorer.propTypes = {
+  game: PropTypes.shape.isRequired,
+  score: PropTypes.number.isRequired,
+};
 
-export default connect(mapStateToProps)(Scorer)
+export default connect(mapStateToProps)(Scorer);

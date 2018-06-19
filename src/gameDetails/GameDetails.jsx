@@ -5,11 +5,11 @@ import BatsmanDetails from '../batsmanDetails/BatsmanDetails';
 
 const GameDetails = () => (
   <div>
-      <ScoreBoard/>
-  <br/>
-      <BatsmanDetails/>
-      <br/>
-      <BowlerDetails/>
+    <ScoreBoard />
+    <br />
+    <BatsmanDetails />
+    <br />
+    <BowlerDetails />
   </div>
 );
 
