@@ -8,11 +8,11 @@ import Col from 'reactstrap/lib/Col';
 import './Extras.css';
 import { recordExtras } from './actions';
 
-const Extras = props =>
-  (<Container className="h-100">
+const Extras = props => (
+  <Container className="h-100">
     <Row className="align-items-center h-100">
       <Col className="text-center">
-        <label>Extras:</label>
+        <label htmlFor="Text">Extras:</label>
       </Col>
       <Col className="text-center w-auto">
         <Button color="primary" onClick={props.recordExtras}>W</Button>
@@ -27,7 +27,7 @@ const Extras = props =>
         <Button color="primary" onClick={props.recordExtras}>LB</Button>
       </Col>
     </Row>
-   </Container>);
+  </Container>);
 
 const mapDispatchToProps = dispatch => ({
   recordExtras: () => dispatch(recordExtras()),
