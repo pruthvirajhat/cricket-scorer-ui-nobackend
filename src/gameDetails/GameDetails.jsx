@@ -1,11 +1,14 @@
 import React from 'react';
-import ScoreBoard from '../scorer/Scoreboard';
+import Scoreboard from '../scorer/Scoreboard';
 import BowlerDetails from '../bowlerDetails/BowlerDetails';
 import BatsmanDetails from '../batsmanDetails/BatsmanDetails';
+import {connect} from "react-redux";
 
 const GameDetails = (props) => (
   <div>
-      {/*<ScoreBoard game={props.game} score={props.score}/>*/}
+
+      <ScoreBoard game={props.game} score={props.score}/>
+
   <br/>
       <BatsmanDetails/>
       <br/>
@@ -13,4 +16,12 @@ const GameDetails = (props) => (
   </div>
 );
 
-export default GameDetails;
+
+export const mapStateToProps = (state) => {
+    return {
+        score: state.scoreInformation,
+        game:state.gameInformation
+    }
+}
+
+export default connect(mapStateToProps)(GameDetails)
