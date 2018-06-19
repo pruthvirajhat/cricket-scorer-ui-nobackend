@@ -2,38 +2,21 @@ import React from 'react';
 import ScoreBoard from '../scorer/Scoreboard';
 import BowlerDetails from '../bowlerDetails/BowlerDetails';
 import BatsmanDetails from '../batsmanDetails/BatsmanDetails';
-import {connect} from "react-redux";
+import { connect } from 'react-redux';
 
-const GameDetails = (props) => (
+const GameDetails = props => (
   <div>
-<<<<<<< HEAD
-    <ScoreBoard />
+    <ScoreBoard game={props.game} score={props.score} />
     <br />
     <BatsmanDetails />
     <br />
     <BowlerDetails />
   </div>
 );
+export const mapStateToProps = state => ({
+  score: state.scoreInformation,
+  game: state.gameInformation,
+});
 
-export default GameDetails;
-=======
+export default connect(mapStateToProps)(GameDetails);
 
-      <ScoreBoard game={props.game} score={props.score}/>
-
-  <br/>
-      <BatsmanDetails/>
-      <br/>
-      <BowlerDetails/>
-  </div>
-);
-
-
-export const mapStateToProps = (state) => {
-    return {
-        score: state.scoreInformation,
-        game:state.gameInformation
-    }
-}
-
-export default connect(mapStateToProps)(GameDetails)
->>>>>>> f71a055035b637b2572b8a6f9c24d93bf263ba1f
