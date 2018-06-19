@@ -42,8 +42,8 @@ class PlayerSelector extends React.Component
 
 export const mapStateToProps = (state) => {
     return {
-        player1 : state.gameInformation.team1.players[0],
-        player2 : state.gameInformation.team1.players[0]
+        player1: state.gameInformation.team1.players[0],
+        player2: state.gameInformation.team1.players[0]
     }
 }
 
