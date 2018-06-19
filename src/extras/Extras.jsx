@@ -27,7 +27,7 @@ const Extras = (props) =>
             </Col>
         </Row>
     </Container>;
-                
+
 const mapDispatchToProps = (dispatch) => ({
     recordExtras: () => dispatch(recordExtras())
 });

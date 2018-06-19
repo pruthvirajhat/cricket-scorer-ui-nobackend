@@ -1,9 +1,15 @@
 import React from 'react';
-import Extras from "../extras/Extras";
+import ScoreBoard from '../scorer/Scoreboard';
+import BowlerDetails from '../bowlerDetails/BowlerDetails';
+import BatsmanDetails from '../batsmanDetails/BatsmanDetails';
 
 const GameDetails = () => (
   <div>
-      <Extras/>
+      <ScoreBoard/>
+  <br/>
+      <BatsmanDetails/>
+      <br/>
+      <BowlerDetails/>
   </div>
 );
 
