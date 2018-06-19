@@ -4,7 +4,7 @@ import { Routes } from '../routes/routes';
 export const CREATE_GAME = 'CREATE_GAME';
 
 export const createGameAction = () => (dispatch) => {
-  dispatch({ type: CREATE_GAME });
-  history.push(Routes.GAME_DETAILS);
+    dispatch({type: CREATE_GAME});
+    history.push(Routes.GAME_DETAILS);
 };
 
