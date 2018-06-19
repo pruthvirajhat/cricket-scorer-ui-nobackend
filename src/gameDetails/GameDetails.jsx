@@ -1,5 +1,5 @@
 import React from 'react';
-import Scoreboard from '../scorer/Scoreboard';
+import ScoreBoard from '../scorer/Scoreboard';
 import BowlerDetails from '../bowlerDetails/BowlerDetails';
 import BatsmanDetails from '../batsmanDetails/BatsmanDetails';
 import {connect} from "react-redux";
