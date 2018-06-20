@@ -6,7 +6,7 @@ import Scoreboard from './Scoreboard';
 import { navigateToStatsAction } from './actions';
 import PlayerSelector from './PlayerSelector';
 import RunsSelector from './RunsSelector';
-import CurrentOver from '../currentOver/CurrentOver'
+import CurrentOver from '../currentOver/CurrentOver';
 
 const Scorer = props => (
   <div>
@@ -14,7 +14,7 @@ const Scorer = props => (
     <div align="center">
       <Button color="primary" onClick={props.navigateToStats}>Statistics</Button>
     </div>
-    <CurrentOver/>
+    <CurrentOver />
     <PlayerSelector />
     <RunsSelector />
   </div>
