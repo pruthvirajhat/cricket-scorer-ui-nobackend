@@ -45,7 +45,7 @@ CurrentOver.propTypes = {
 
 
 export const mapStateToProps = state => ({
-  currentOver: state.currentOver,
+  currentOver: state.currentOver.currentOverScore,
   currentBowler: state.currentBall.bowler,
 });
 
