@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import ScoreBoard from '../scorer/Scoreboard';
 import BowlerDetails from '../bowlerDetails/BowlerDetails';
 import BatsmanDetails from '../batsmanDetails/BatsmanDetails';
-import { connect } from 'react-redux';
+
 
 const GameDetails = props => (
   <div>
@@ -11,6 +13,12 @@ const GameDetails = props => (
     <BowlerDetails />
   </div>
 );
+
+GameDetails.propTypes = {
+  game: PropTypes.shape.isRequired,
+  score: PropTypes.shape.isRequired,
+};
+
 export const mapStateToProps = state => ({
   score: state.scoreInformation,
   game: state.gameInformation,
