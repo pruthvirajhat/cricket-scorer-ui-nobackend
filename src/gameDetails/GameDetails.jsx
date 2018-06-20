@@ -7,9 +7,7 @@ import { connect } from 'react-redux';
 const GameDetails = props => (
   <div>
     <ScoreBoard game={props.game} score={props.score} />
-    <br />
     <BatsmanDetails />
-    <br />
     <BowlerDetails />
   </div>
 );
@@ -19,4 +17,5 @@ export const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(GameDetails);
+
 
