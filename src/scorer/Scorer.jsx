@@ -7,6 +7,7 @@ import { navigateToStatsAction } from './actions';
 import PlayerSelector from './PlayerSelector';
 import RunsSelector from './RunsSelector';
 import CurrentOver from '../currentOver/CurrentOver';
+import NextBall from './NextBall';
 
 const Scorer = props => (
   <div>
@@ -17,6 +18,7 @@ const Scorer = props => (
     <CurrentOver />
     <PlayerSelector />
     <RunsSelector />
+    <NextBall />
   </div>
 );
 

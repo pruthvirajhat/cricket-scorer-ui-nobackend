@@ -45,7 +45,7 @@ PlayerSelector.propTypes = {
   player2: PropTypes.string.isRequired,
   currentBatsman: PropTypes.string.isRequired,
   onSelectPlayerClick: PropTypes.func.isRequired,
-}
+};
 
 export const mapStateToProps = state => ({
   player1: state.gameInformation.team1.players[0],

@@ -5,12 +5,6 @@ import { connect } from 'react-redux';
 import { selectRunsAction } from './actions';
 
 class RunsSelector extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-
   onRadioButtonClick(runs) {
     this.props.onSelectRunsClick(runs);
   }

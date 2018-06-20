@@ -23,3 +23,10 @@ export const navigateToStatsAction = () => () => {
   history.push(Routes.GAME_DETAILS);
 };
 
+export function nextBallAction(currentBall) {
+  return {
+    type: NEXT_BALL,
+    payload: currentBall,
+  };
+}
+
