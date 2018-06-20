@@ -2,7 +2,7 @@ import { NEXT_BALL } from '../scorer/actions';
 
 export const initialState = {
   ballsCount: 0,
-  currentOverScore: ['', '', '', '', '', ''],
+  currentOverScore: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -10,9 +10,8 @@ const reducer = (state = initialState, action = {}) => {
     case NEXT_BALL:
       return {
         ...state,
-        over: {
-          ...state.over, currentOverScore: action.payload.runs.batsman,
-        },
+        ballsCount: state.ballsCount + 1,
+        currentOverScore: [...state.currentOverScore, action.payload.runs.batsman.toString()],
       };
     default:
       return state;
