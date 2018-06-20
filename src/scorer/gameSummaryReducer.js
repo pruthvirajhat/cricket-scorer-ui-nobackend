@@ -11,7 +11,7 @@ const initialState =
           ballType: 'N',
           wicket: 'Batsman name',
           runs: {
-            batsman: 0,
+            batsman: 5,
             extras: 0,
           },
         },
@@ -32,7 +32,7 @@ const initialState =
           ballType: 'N',
           wicket: '',
           runs: {
-            batsman: 0,
+            batsman: 3,
             extras: 0,
           },
         },
