@@ -20,12 +20,190 @@ describe('get batsmen data function test', () => {
               extras: 0,
             },
           },
+        ],
+      },
+    ];
+    const expected = [{
+      Name: 'Karthik',
+      Runs: 1,
+      Balls: 1,
+      Fours: 0,
+      Sixes: 0,
+      StrikeRate: 100,
+    }];
+
+    expect(getBatsmenData(overs)).toEqual(expected);
+  });
+  it('should return score and balls for one batsman if overs has single over played by same batsman', () => {
+    const overs = [
+      {
+        bowler: 'name',
+        deliveries: [
           {
             batsman: 'Karthik',
             ballType: 'N',
-            wicket: 'Batsman name',
+            wicket: '',
             runs: {
-              batsman: 0,
+              batsman: 2,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 2,
+              extras: 0,
+            },
+          },
+        ],
+      },
+    ];
+    const expected = [{
+      Name: 'Karthik',
+      Runs: 4,
+      Balls: 2,
+      Fours: 0,
+      Sixes: 0,
+      StrikeRate: 200,
+    }];
+
+    expect(getBatsmenData(overs)).toEqual(expected);
+  });
+  it('should return fours for one batsman if overs (array) has single over played by same batsman', () => {
+    const overs = [
+      {
+        bowler: 'name',
+        deliveries: [
+          {
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 2,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 4,
+              extras: 0,
+            },
+          },
+        ],
+      },
+    ];
+    const expected = [{
+      Name: 'Karthik',
+      Runs: 6,
+      Balls: 2,
+      Fours: 1,
+      Sixes: 0,
+      StrikeRate: 300,
+    }];
+
+    expect(getBatsmenData(overs)).toEqual(expected);
+  });
+  it('should return number of sixes for one batsman if overs (array) has single over played by same batsman', () => {
+    const overs = [
+      {
+        bowler: 'name',
+        deliveries: [
+          {
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 2,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 6,
+              extras: 0,
+            },
+          },
+        ],
+      },
+    ];
+    const expected = [{
+      Name: 'Karthik',
+      Runs: 8,
+      Balls: 2,
+      Fours: 0,
+      Sixes: 1,
+      StrikeRate: 400,
+    }];
+
+    expect(getBatsmenData(overs)).toEqual(expected);
+  });
+
+  it('should return one four and one six for one batsman if overs (array) has single over played by same batsman', () => {
+    const overs = [
+      {
+        bowler: 'name',
+        deliveries: [
+          {
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 4,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 6,
+              extras: 0,
+            },
+          },
+        ],
+      },
+    ];
+    const expected = [{
+      Name: 'Karthik',
+      Runs: 10,
+      Balls: 2,
+      Fours: 1,
+      Sixes: 1,
+      StrikeRate: 500,
+    }];
+
+    expect(getBatsmenData(overs)).toEqual(expected);
+  });
+
+  it('should return results for two batsman if overs (array) has single over played by both batsman', () => {
+    const overs = [
+      {
+        bowler: 'name',
+        deliveries: [
+          {
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 1,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Dilip',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 6,
               extras: 0,
             },
           },
@@ -39,6 +217,14 @@ describe('get batsmen data function test', () => {
       Fours: 0,
       Sixes: 0,
       StrikeRate: 100,
+    },
+    {
+      Name: 'Dilip',
+      Runs: 6,
+      Balls: 1,
+      Fours: 0,
+      Sixes: 1,
+      StrikeRate: 600,
     }];
 
     expect(getBatsmenData(overs)).toEqual(expected);

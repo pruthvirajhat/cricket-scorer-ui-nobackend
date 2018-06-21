@@ -1,13 +1,42 @@
+function calculateStrikeRate(totalRuns, totalBall) {
+  return (totalRuns / totalBall) * 100;
+}
+
+function calculateFours(runs) {
+  if (runs % 4 === 0) {
+    return 1;
+  }
+  return 0;
+}
+
+function calculateSixes(runs) {
+  if (runs % 6 === 0) {
+    return 1;
+  }
+  return 0;
+}
+
 function addToBatsmanSummer(batsMenMap, delivery) {
   let batsmanObject = batsMenMap[delivery.batsman] ? batsMenMap[delivery.batsman] : {
     Runs: 0,
     Name: delivery.batsman,
-    Balls: 1,
+    Balls: 0,
     Fours: 0,
     Sixes: 0,
-    StrikeRate: 100,
+    StrikeRate: 0,
   };
-  batsmanObject = { ...batsmanObject, Runs: delivery.runs.batsman + batsmanObject.Runs };
+  const totalRuns = delivery.runs.batsman + batsmanObject.Runs;
+  const totalBalls = batsmanObject.Balls + 1;
+  const totalFours = batsmanObject.Fours + calculateFours(delivery.runs.batsman);
+  const totalSixes = batsmanObject.Sixes + calculateSixes(delivery.runs.batsman);
+  batsmanObject = {
+    ...batsmanObject,
+    Runs: totalRuns,
+    Balls: totalBalls,
+    Fours: totalFours,
+    Sixes: totalSixes,
+    StrikeRate: calculateStrikeRate(totalRuns, totalBalls),
+  };
   return batsmanObject;
 }
 
