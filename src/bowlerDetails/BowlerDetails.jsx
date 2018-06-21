@@ -11,7 +11,7 @@ const BowlerDetails = (props) => {
   return (<Container>
     <label htmlFor="Text"><b>Bowling Table</b></label>
     <br />
-    <Table responsive>
+    <Table table-sm bordered size={"sm"}>
       <thead>
         <tr>
           <th>Bowler</th>

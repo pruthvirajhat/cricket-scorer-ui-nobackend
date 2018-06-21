@@ -12,7 +12,7 @@ const BatsmanDetails = (props) => {
     <Container>
       <label htmlFor="Text"><b>Batting Table</b></label>
       <br />
-      <Table responsive>
+        <Table table-sm bordered size={"sm"}>
         <thead>
           <tr>
             <th>Batsman</th>
