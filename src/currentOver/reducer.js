@@ -9,11 +9,10 @@ const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case NEXT_BALL:
       if (state.ballsCount === 6) {
-        // state.currentOverScore = [];
         return {
           ...state,
           ballsCount: 1,
-          currentOverScore: [...state.currentOverScore, action.payload.runs.batsman.toString()],
+          currentOverScore: [action.payload.runs.batsman.toString()],
         };
       }
       return {

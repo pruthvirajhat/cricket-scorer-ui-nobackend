@@ -80,8 +80,12 @@ RunsSelector.propTypes = {
   selected: PropTypes.number.isRequired,
 };
 
+export const mapStateToProps = state => ({
+  selected: state.currentBall.runs.batsman,
+});
+
 export const mapDispatcherToProps = dispatch => ({
   onSelectRunsClick: runs => dispatch(selectRunsAction(runs)),
 });
 
-export default connect(undefined, mapDispatcherToProps)(RunsSelector);
+export default connect(mapStateToProps, mapDispatcherToProps)(RunsSelector);
