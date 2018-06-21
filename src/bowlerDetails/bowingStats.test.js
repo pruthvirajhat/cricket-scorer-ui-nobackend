@@ -21,6 +21,42 @@ describe('bowlingStats', () => {
           batsman: 0,
           extras: 0,
         },
+      },
+      {
+        batsman: 'Name ',
+        ballType: 'N',
+        wicket: 'Batsman name',
+        runs: {
+          batsman: 0,
+          extras: 0,
+        },
+      },
+      {
+        batsman: 'Name ',
+        ballType: 'N',
+        wicket: 'Batsman name',
+        runs: {
+          batsman: 0,
+          extras: 0,
+        },
+      },
+      {
+        batsman: 'Name ',
+        ballType: 'N',
+        wicket: 'Batsman name',
+        runs: {
+          batsman: 0,
+          extras: 0,
+        },
+      },
+      {
+        batsman: 'Name ',
+        ballType: 'N',
+        wicket: 'Batsman name',
+        runs: {
+          batsman: 0,
+          extras: 0,
+        },
       }],
     },
     {
@@ -49,7 +85,7 @@ describe('bowlingStats', () => {
 
 
     const expected = [{
-      name: 'name', over: 2, maiden: 2, runs: 0, wickets: 4,
+      name: 'name', over: 1.2, maiden: 2, runs: 0, wickets: 8,
     }];
     expect(getBowlingTableDetails(overs)).toEqual(expected);
   });
