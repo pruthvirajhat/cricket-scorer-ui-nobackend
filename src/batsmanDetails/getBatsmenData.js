@@ -1,5 +1,5 @@
 function calculateStrikeRate(totalRuns, totalBall) {
-  return (totalRuns / totalBall) * 100;
+  return Number(((totalRuns / totalBall) * 100).toFixed(2));
 }
 
 function calculateFours(runs) {
