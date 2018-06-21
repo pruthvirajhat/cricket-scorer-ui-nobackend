@@ -2,6 +2,16 @@ import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
 
+function calculateOversCount(overs) {
+  let oversCount = overs.length - 1;
+  const deliveryCount = overs[oversCount].deliveries.length;
+  if (deliveryCount === 6) {
+    oversCount += 1;
+    return oversCount;
+  }
+  return oversCount + (deliveryCount / 10);
+}
+
 const renderCurrentlyBattingTeamScore = (props) => {
   const team = props.score.currentlyBattingTeamName === props.game.team1.name ?
     props.score.team1 : props.score.team2;
@@ -12,7 +22,7 @@ const renderCurrentlyBattingTeamScore = (props) => {
     </Col>
     <Col sm="1" xs="2" />
     <Col style={{ textAlign: 'right' }}>
-      <b>{`${team.score}/${team.wickets} in ${team.overs}/${props.game.numberOfOvers}`}</b>
+      <b>{`${team.score}/${team.wickets} in ${calculateOversCount(props.overs)}/${props.game.numberOfOvers}`}</b>
     </Col></Row>);
 };
 
@@ -57,6 +67,7 @@ const ScoreBoard = props =>
   );
 
 renderCurrentlyBattingTeamScore.propTypes = {
+  overs: PropTypes.shape.isRequired,
   score: PropTypes.shape({
     currentlyBattingTeamName: PropTypes.string.isRequired,
     team1: PropTypes.shape({

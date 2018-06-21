@@ -11,7 +11,7 @@ import NextBall from './NextBall';
 
 const Scorer = props => (
   <div>
-    <Scoreboard game={props.game} score={props.score} />
+    <Scoreboard game={props.game} score={props.score} overs={props.overs} />
     <div align="center">
       <Button color="primary" onClick={props.navigateToStats}>Statistics</Button>
     </div>
@@ -28,6 +28,7 @@ const Scorer = props => (
 export const mapStateToProps = state => ({
   score: state.scoreInformation,
   game: state.gameInformation,
+  overs: state.gameSummary.innings1.overs,
 });
 export const mapDispatchToProps = dispatch => ({
   navigateToStats: () => dispatch(navigateToStatsAction()),
@@ -37,6 +38,7 @@ Scorer.propTypes = {
   game: PropTypes.shape.isRequired,
   score: PropTypes.number.isRequired,
   navigateToStats: PropTypes.func.isRequired,
+  overs: PropTypes.shape.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Scorer);
