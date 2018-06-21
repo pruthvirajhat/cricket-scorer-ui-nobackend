@@ -22,26 +22,22 @@ class PlayerSelector extends React.Component {
     return (
       <div align="center">
         <ButtonGroup>
-          <Col>
-            <Button
-              outline
-              color="primary"
-              onClick={() => this.onRadioButtonClick(this.props.player1)}
-              active={this.props.player1 === this.props.currentBatsman}
-            >
-              {this.props.player1}
-            </Button>
-          </Col>
-          <Col>
-            <Button
-              outline
-              color="primary"
-              onClick={() => this.onRadioButtonClick(this.props.player2)}
-              active={this.props.player2 === this.props.currentBatsman}
-            >
-              {this.props.player2}
-            </Button>
-          </Col>
+          <Button
+            outline
+            color="primary"
+            onClick={() => this.onRadioButtonClick(this.props.player1)}
+            active={this.props.player1 === this.props.currentBatsman}
+          >
+            {this.props.player1}
+          </Button>
+          <Button
+            outline
+            color="primary"
+            onClick={() => this.onRadioButtonClick(this.props.player2)}
+            active={this.props.player2 === this.props.currentBatsman}
+          >
+            {this.props.player2}
+          </Button>
         </ButtonGroup>
       </div>
     );
