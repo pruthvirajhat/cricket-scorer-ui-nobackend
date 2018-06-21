@@ -9,6 +9,7 @@ import BatsmanDetails from '../batsmanDetails/BatsmanDetails';
 const GameDetails = props => (
   <div>
     <ScoreBoard game={props.game} score={props.score} overs={props.overs} />
+    <br />
     <BatsmanDetails />
     <BowlerDetails />
   </div>
