@@ -17,7 +17,9 @@ const Scorer = props => (
     </div>
     <CurrentOver />
     <PlayerSelector />
+    <br />
     <RunsSelector />
+    <br />
     <NextBall />
   </div>
 );

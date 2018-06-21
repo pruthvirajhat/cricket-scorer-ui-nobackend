@@ -15,11 +15,11 @@ const BowlerDetails = (props) => {
     <Table table-sm bordered size={"sm"}>
       <thead>
         <tr>
-          <th>Bowler</th>
-          <th>Overs</th>
-          <th>Maiden</th>
-          <th>Runs</th>
-          <th>Wickets</th>
+            <th className="text-center">Bowler</th>
+            <th class="text-center">Overs</th>
+            <th className="text-center">Maiden</th>
+            <th className="text-center">Runs</th>
+            <th className="text-center">Wickets</th>
         </tr>
       </thead>
       <tbody>
@@ -27,10 +27,11 @@ const BowlerDetails = (props) => {
                 bowlerdataArray
                 .map(bowler => (
                   <tr key={bowler.name}>
-                    <td>{bowler.over}</td>
-                    <td>{bowler.maiden}</td>
-                    <td>{bowler.runs}</td>
-                    <td>{bowler.wickets}</td>
+                    <th className="text-center">{bowler.name}</th>
+                    <td align="center">{bowler.over}</td>
+                      <td align="center">{bowler.maiden}</td>
+                      <td align="center">{bowler.runs}</td>
+                      <td align="center">{bowler.wickets}</td>
                   </tr>))}
       </tbody>
     </Table>
