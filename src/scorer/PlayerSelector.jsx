@@ -24,6 +24,7 @@ class PlayerSelector extends React.Component {
         <ButtonGroup>
           <Col>
             <Button
+              outline
               color="primary"
               onClick={() => this.onRadioButtonClick(this.props.player1)}
               active={this.props.player1 === this.props.currentBatsman}
@@ -33,6 +34,7 @@ class PlayerSelector extends React.Component {
           </Col>
           <Col>
             <Button
+              outline
               color="primary"
               onClick={() => this.onRadioButtonClick(this.props.player2)}
               active={this.props.player2 === this.props.currentBatsman}
