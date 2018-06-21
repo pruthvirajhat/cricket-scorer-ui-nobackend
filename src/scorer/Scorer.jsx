@@ -34,11 +34,11 @@ export const mapDispatchToProps = dispatch => ({
   navigateToStats: () => dispatch(navigateToStatsAction()),
 });
 
-Scorer.propTypes = {
-  game: PropTypes.shape.isRequired,
-  score: PropTypes.number.isRequired,
-  navigateToStats: PropTypes.func.isRequired,
-  overs: PropTypes.shape.isRequired,
-};
+// Scorer.propTypes = {
+//   game: PropTypes.shape.isRequired,
+//   score: PropTypes.number.isRequired,
+//   navigateToStats: PropTypes.func.isRequired,
+//   overs: PropTypes.shape.isRequired,
+// };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Scorer);

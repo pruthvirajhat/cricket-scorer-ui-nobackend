@@ -21,11 +21,11 @@ export const mapStateToProps = state => ({
   overs: state.gameSummary.innings1.overs,
 });
 
-GameDetails.propTypes = {
-  game: PropTypes.shape.isRequired,
-  score: PropTypes.number.isRequired,
-  overs: PropTypes.shape.isRequired,
-};
+// GameDetails.propTypes = {
+//   game: PropTypes.shape.isRequired,
+//   score: PropTypes.number.isRequired,
+//   overs: PropTypes.shape.isRequired,
+// };
 
 export default connect(mapStateToProps)(GameDetails);
 

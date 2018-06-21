@@ -21,9 +21,9 @@ export const mapDispatcherToProps = dispatch => ({
   onNextBallClick: currentBall => dispatch(nextBallAction(currentBall)),
 });
 
-renderNextBallButton.propTypes = {
-  onNextBallClick: PropTypes.func.isRequired,
-  currentBall: PropTypes.shape.isRequired,
-};
+// renderNextBallButton.propTypes = {
+//   onNextBallClick: PropTypes.func.isRequired,
+//   currentBall: PropTypes.shape.isRequired,
+// };
 
 export default connect(mapStateToProps, mapDispatcherToProps)(renderNextBallButton);

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 
 const CurrentOver = props => (
   <Container>
@@ -15,7 +14,7 @@ const CurrentOver = props => (
           <Col sm="1" xs="2" />
           <Col style={{ textAlign: 'right' }}>
             {props.currentOver.map(item => (
-              <row>{item}&nbsp;</row>
+              <row key={Math.random()}>{item}&nbsp;</row>
                                 ))}
           </Col>
         </Row>
@@ -38,10 +37,10 @@ const CurrentOver = props => (
   </Container>
 );
 
-CurrentOver.propTypes = {
-  currentBowler: PropTypes.string.isRequired,
-  currentOver: PropTypes.string.isRequired,
-};
+// CurrentOver.propTypes = {
+//   currentBowler: PropTypes.string.isRequired,
+//   currentOver: PropTypes.string.isRequired,
+// };
 
 
 export const mapStateToProps = state => (
