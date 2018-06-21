@@ -7,7 +7,7 @@ describe('bowlerDetails/reducer', () => {
             innings1: {
               teamName: 'Team1',
               overs: [{
-                bowler: 'name',
+                bowler: 'Manisha',
                 deliveries: [{
                   batsman: 'Name ',
                   ballType: 'N',
@@ -28,7 +28,7 @@ describe('bowlerDetails/reducer', () => {
                 }],
               },
               {
-                bowler: 'name',
+                bowler: 'Manisha',
                 deliveries: [{
                   batsman: 'Name ',
                   ballType: 'N',
