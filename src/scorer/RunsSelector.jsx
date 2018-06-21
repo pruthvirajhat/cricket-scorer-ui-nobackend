@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, ButtonGroup, Col } from 'reactstrap';
+import { Button, ButtonGroup } from 'reactstrap';
 import { connect } from 'react-redux';
 import { selectRunsAction } from './actions';
 

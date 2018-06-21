@@ -3,7 +3,7 @@ import reducer from './currentballreducer';
 describe('scorer/currentballreducer', () => {
   it('should return initial state of current ball', () => {
     const expectedState = {
-      batsman: '',
+      batsman: 'Player1.1',
       ballType: 'N',
       non_striker: '',
       wicket: '',
@@ -32,7 +32,7 @@ describe('scorer/currentballreducer', () => {
 
   it('should return state of current ball with batsman runs', () => {
     const expectedState = {
-      batsman: '',
+      batsman: 'Player1.1',
       ballType: 'N',
       non_striker: '',
       wicket: '',

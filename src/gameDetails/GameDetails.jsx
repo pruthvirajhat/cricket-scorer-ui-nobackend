@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import ScoreBoard from '../scorer/Scoreboard';
 import BowlerDetails from '../bowlerDetails/BowlerDetails';
 import BatsmanDetails from '../batsmanDetails/BatsmanDetails';
@@ -7,7 +8,7 @@ import BatsmanDetails from '../batsmanDetails/BatsmanDetails';
 
 const GameDetails = props => (
   <div>
-    <ScoreBoard game={props.game} score={props.score} />
+    <ScoreBoard game={props.game} score={props.score} overs={props.overs} />
     <BatsmanDetails />
     <BowlerDetails />
   </div>
@@ -17,7 +18,14 @@ const GameDetails = props => (
 export const mapStateToProps = state => ({
   score: state.scoreInformation,
   game: state.gameInformation,
+  overs: state.gameSummary.innings1.overs,
 });
+
+GameDetails.propTypes = {
+  game: PropTypes.shape.isRequired,
+  score: PropTypes.number.isRequired,
+  overs: PropTypes.shape.isRequired,
+};
 
 export default connect(mapStateToProps)(GameDetails);
 
