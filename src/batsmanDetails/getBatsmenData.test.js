@@ -229,4 +229,226 @@ describe('get batsmen data function test', () => {
 
     expect(getBatsmenData(overs)).toEqual(expected);
   });
+  it('should return results for two batsman they played complete over', () => {
+    const overs = [
+      {
+        bowler: 'name',
+        deliveries: [
+          {
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 1,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Dilip',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 1,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 6,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 1,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Dilip',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 6,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Dilip',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 6,
+              extras: 0,
+            },
+          },
+        ],
+      },
+    ];
+    const expected = [{
+      Name: 'Karthik',
+      Runs: 8,
+      Balls: 3,
+      Fours: 0,
+      Sixes: 1,
+      StrikeRate: 266.67,
+    },
+    {
+      Name: 'Dilip',
+      Runs: 13,
+      Balls: 3,
+      Fours: 0,
+      Sixes: 2,
+      StrikeRate: 433.33,
+    }];
+
+    expect(getBatsmenData(overs)).toEqual(expected);
+  });
+
+  it('should return results for two batsman if they completed two overs ', () => {
+    const overs = [
+      {
+        bowler: 'name',
+        deliveries: [
+          {
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 1,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Dilip',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 1,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 6,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 1,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Dilip',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 6,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Dilip',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 6,
+              extras: 0,
+            },
+          },
+        ],
+      },
+      {
+        bowler: 'name',
+        deliveries: [
+          {
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 1,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Dilip',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 1,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 6,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 1,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Dilip',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 6,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Dilip',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 6,
+              extras: 0,
+            },
+          },
+        ],
+      },
+    ];
+    const expected = [{
+      Name: 'Karthik',
+      Runs: 16,
+      Balls: 6,
+      Fours: 0,
+      Sixes: 2,
+      StrikeRate: 266.67,
+    },
+    {
+      Name: 'Dilip',
+      Runs: 26,
+      Balls: 6,
+      Fours: 0,
+      Sixes: 4,
+      StrikeRate: 433.33,
+    }];
+
+    expect(getBatsmenData(overs)).toEqual(expected);
+  });
 });

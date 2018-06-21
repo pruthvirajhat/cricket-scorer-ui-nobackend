@@ -6,8 +6,8 @@ import { nextBallAction } from './actions';
 
 
 const renderNextBallButton = props => (
-  <div>
-    <Button onClick={() => props.onNextBallClick(props.currentBall)}>
+  <div align="center">
+    <Button color="primary" onClick={() => props.onNextBallClick(props.currentBall)}>
         Next Ball
     </Button>
   </div>
