@@ -21,10 +21,18 @@ export const initialState = {
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case NEXT_BALL:
+      if (state.currentlyBattingTeamName === state.team1.name) {
+        return {
+          ...state,
+          team1: {
+            ...state.team1, score: action.payload.runs.batsman + state.team1.score,
+          },
+        };
+      }
       return {
         ...state,
-        team1: {
-          ...state.team1, score: action.payload.runs.batsman + state.team1.score,
+        team2: {
+          ...state.team2, score: action.payload.runs.batsman + state.team2.score,
         },
       };
     default:

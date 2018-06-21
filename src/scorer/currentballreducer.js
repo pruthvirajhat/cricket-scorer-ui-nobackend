@@ -1,7 +1,6 @@
 import { SELECT_PLAYER, SELECT_RUNS } from './actions';
 
 const initialState = {
-  bowler: '',
   batsman: '',
   non_striker: '',
   ballType: 'N',
