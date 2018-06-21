@@ -6,7 +6,7 @@ describe('scorer/gameSummaryreducer', () => {
       innings1: {
         teamName: 'team 1',
         overs: [{
-          bowler: undefined,
+          bowler: 'Player2.2',
           deliveries: [{
             batsman: 'Karthik',
             ballType: 'N',
@@ -40,7 +40,7 @@ describe('scorer/gameSummaryreducer', () => {
         innings1: {
           teamName: 'Team1',
           overs: [{
-            bowler: '',
+            bowler: 'Player2.2',
             deliveries: [{
               batsman: 'Karthik',
               ballType: 'N',
@@ -67,7 +67,7 @@ describe('scorer/gameSummaryreducer', () => {
       innings1: {
         teamName: 'Team1',
         overs: [{
-          bowler: undefined,
+          bowler: 'Player2.2',
           deliveries: [{
             batsman: 'Karthik',
             ballType: 'N',
@@ -87,6 +87,160 @@ describe('scorer/gameSummaryreducer', () => {
             },
           },
           {
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: 'Batsman name',
+            runs: {
+              batsman: 5,
+              extras: 0,
+            },
+          }],
+        },
+        ],
+      },
+    };
+    expect(reducer(initialState, {
+      type: 'NEXT_BALL',
+      payload: {
+        batsman: 'Karthik',
+        ballType: 'N',
+        wicket: 'Batsman name',
+        runs: {
+          batsman: 5,
+          extras: 0,
+        },
+      },
+    })).toEqual(expectedState);
+  });
+
+  it('should update overs in gameSummary state when new over starts', () => {
+    const initialState =
+      {
+        innings1: {
+          teamName: 'Team1',
+          overs: [{
+            bowler: 'Player2.2',
+            deliveries: [{
+              batsman: 'Karthik',
+              ballType: 'N',
+              wicket: 'Batsman name',
+              runs: {
+                batsman: 5,
+                extras: 0,
+              },
+            },
+            {
+              batsman: 'Dilip ',
+              ballType: 'N',
+              wicket: '',
+              runs: {
+                batsman: 0,
+                extras: 0,
+              },
+            },
+            {
+              batsman: 'Dilip ',
+              ballType: 'N',
+              wicket: '',
+              runs: {
+                batsman: 0,
+                extras: 0,
+              },
+            },
+            {
+              batsman: 'Dilip ',
+              ballType: 'N',
+              wicket: '',
+              runs: {
+                batsman: 0,
+                extras: 0,
+              },
+            },
+            {
+              batsman: 'Dilip ',
+              ballType: 'N',
+              wicket: '',
+              runs: {
+                batsman: 0,
+                extras: 0,
+              },
+            },
+            {
+              batsman: 'Dilip ',
+              ballType: 'N',
+              wicket: '',
+              runs: {
+                batsman: 0,
+                extras: 0,
+              },
+            }],
+          },
+          ],
+        },
+      };
+    const expectedState = {
+      innings1: {
+        teamName: 'Team1',
+        overs: [{
+          bowler: 'Player2.2',
+          deliveries: [{
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: 'Batsman name',
+            runs: {
+              batsman: 5,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Dilip ',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 0,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Dilip ',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 0,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Dilip ',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 0,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Dilip ',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 0,
+              extras: 0,
+            },
+          },
+          {
+            batsman: 'Dilip ',
+            ballType: 'N',
+            wicket: '',
+            runs: {
+              batsman: 0,
+              extras: 0,
+            },
+          }],
+        },
+        {
+          bowler: 'Player2.2',
+          deliveries: [{
             batsman: 'Karthik',
             ballType: 'N',
             wicket: 'Batsman name',
