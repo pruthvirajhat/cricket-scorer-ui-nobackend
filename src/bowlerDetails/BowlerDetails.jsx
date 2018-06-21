@@ -12,11 +12,11 @@ const BowlerDetails = (props) => {
   return (<Container>
     <label htmlFor="Text"><b>Bowling Table</b></label>
     <br />
-    <Table table-sm bordered size={"sm"}>
+    <Table table-sm="true"  bordered size={"sm"}>
       <thead>
         <tr>
             <th className="text-center">Bowler</th>
-            <th class="text-center">Overs</th>
+            <th className="text-center">Overs</th>
             <th className="text-center">Maiden</th>
             <th className="text-center">Runs</th>
             <th className="text-center">Wickets</th>

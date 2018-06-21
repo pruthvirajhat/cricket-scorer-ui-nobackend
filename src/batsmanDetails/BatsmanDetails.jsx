@@ -11,7 +11,7 @@ const BatsmanDetails = (props) => {
     <Container>
       <label htmlFor="Text"><b>Batting Table</b></label>
       <br />
-        <Table table-sm bordered size={"sm"}>
+        <Table table-sm="true" bordered size={"sm"}>
         <thead>
           <tr>
               <th className="text-center">Batsman</th>
