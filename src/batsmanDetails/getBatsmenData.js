@@ -3,14 +3,14 @@ function calculateStrikeRate(totalRuns, totalBall) {
 }
 
 function calculateFours(runs) {
-  if (runs % 4 === 0) {
+  if (runs > 0 && runs % 4 === 0) {
     return 1;
   }
   return 0;
 }
 
 function calculateSixes(runs) {
-  if (runs % 6 === 0) {
+  if (runs > 0 && runs % 6 === 0) {
     return 1;
   }
   return 0;

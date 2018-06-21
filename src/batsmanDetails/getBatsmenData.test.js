@@ -451,4 +451,32 @@ describe('get batsmen data function test', () => {
 
     expect(getBatsmenData(overs)).toEqual(expected);
   });
+  it('should return score for one batsman if overs has single ball in single over', () => {
+    const overs = [
+      {
+        bowler: 'name',
+        deliveries: [
+          {
+            batsman: 'Karthik',
+            ballType: 'N',
+            wicket: 'Batsman name',
+            runs: {
+              batsman: 0,
+              extras: 0,
+            },
+          },
+        ],
+      },
+    ];
+    const expected = [{
+      Name: 'Karthik',
+      Runs: 0,
+      Balls: 1,
+      Fours: 0,
+      Sixes: 0,
+      StrikeRate: 0,
+    }];
+
+    expect(getBatsmenData(overs)).toEqual(expected);
+  });
 });
