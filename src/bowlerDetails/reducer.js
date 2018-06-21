@@ -3,7 +3,7 @@ const initialState =
       innings1: {
         teamName: 'Team1',
         overs: [{
-          bowler: 'name',
+          bowler: 'Manisha',
           deliveries: [{
             batsman: 'Name ',
             ballType: 'N',
@@ -24,7 +24,7 @@ const initialState =
           }],
         },
         {
-          bowler: 'name',
+          bowler: 'Manisha',
           deliveries: [{
             batsman: 'Name ',
             ballType: 'N',

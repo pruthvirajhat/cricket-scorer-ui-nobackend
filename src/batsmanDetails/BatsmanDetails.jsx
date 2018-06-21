@@ -15,23 +15,23 @@ const BatsmanDetails = (props) => {
         <Table table-sm bordered size={"sm"}>
         <thead>
           <tr>
-            <th>Batsman</th>
-            <th>Runs</th>
-            <th>Balls</th>
-            <th>Fours</th>
-            <th>Sixes</th>
-            <th>Strike Rate</th>
+              <th className="text-center">Batsman</th>
+              <th className="text-center">Runs</th>
+              <th className="text-center">Balls</th>
+              <th className="text-center">Fours</th>
+              <th className="text-center">Sixes</th>
+              <th className="text-center">Strike Rate</th>
           </tr>
         </thead>
         <tbody>
           {batsmenData.map(batsman => (
             <tr>
-              <th scope="row">{batsman.Name}</th>
-              <td>{batsman.Runs}</td>
-              <td>{batsman.Balls}</td>
-              <td>{batsman.Fours}</td>
-              <td>{batsman.Sixes}</td>
-              <td>{batsman.StrikeRate}</td>
+              <th className="text-center">{batsman.Name}</th>
+              <td align="center">{batsman.Runs}</td>
+              <td align="center">{batsman.Balls}</td>
+              <td align="center">{batsman.Fours}</td>
+              <td align="center">{batsman.Sixes}</td>
+              <td align="center">{batsman.StrikeRate}</td>
             </tr>))}
         </tbody>
       </Table>
