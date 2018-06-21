@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Container, Table } from 'reactstrap';
 import { connect } from 'react-redux';
 import getBatsmenData from './getBatsmenData';
@@ -25,7 +24,7 @@ const BatsmanDetails = (props) => {
         </thead>
         <tbody>
           {batsmenData.map(batsman => (
-            <tr>
+            <tr key={batsman.Name}>
               <th scope="row">{batsman.Name}</th>
               <td>{batsman.Runs}</td>
               <td>{batsman.Balls}</td>
@@ -38,10 +37,6 @@ const BatsmanDetails = (props) => {
     </Container>);
 };
 
-
-BatsmanDetails.propTypes = {
-  overs: PropTypes.shape.isRequired,
-};
 export const mapStateToProps = state => ({
 
   overs: state.gameSummary.innings1.overs,

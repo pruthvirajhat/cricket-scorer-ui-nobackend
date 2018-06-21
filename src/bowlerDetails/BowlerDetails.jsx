@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container, Table } from 'reactstrap';
 import { connect } from 'react-redux';
-import getBowlingTableDetails from './bowingStats';
+import PropTypes from 'prop-types';
+import { getBowlingTableDetails } from './bowingStats';
 
 
 const BowlerDetails = (props) => {
@@ -25,20 +26,20 @@ const BowlerDetails = (props) => {
         {
                 bowlerdataArray
                 .map(bowler => (
-                  <tr>
-                    <th scope="row">{bowler.name}</th>
+                  <tr key={bowler.name}>
                     <td>{bowler.over}</td>
                     <td>{bowler.maiden}</td>
                     <td>{bowler.runs}</td>
                     <td>{bowler.wickets}</td>
                   </tr>))}
-
-
       </tbody>
     </Table>
   </Container>);
 };
 
+BowlerDetails.prototype = {
+  matchCurrentStatus: PropTypes.shape.isRequired,
+};
 
 export const mapStateToProps = state => ({
   matchCurrentStatus: state.matchCurrentStatus,
