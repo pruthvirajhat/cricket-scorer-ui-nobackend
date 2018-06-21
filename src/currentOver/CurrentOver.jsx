@@ -44,9 +44,11 @@ CurrentOver.propTypes = {
 };
 
 
-export const mapStateToProps = state => ({
-  currentOver: state.currentOver.currentOverScore,
-  currentBowler: state.currentBall.bowler,
-});
+export const mapStateToProps = state => (
+  {
+    currentOver: state.currentOver.currentOverScore,
+    currentBowler:
+    state.gameSummary.innings1.overs[state.gameSummary.innings1.overs.length - 1].bowler,
+  });
 
 export default connect(mapStateToProps)(CurrentOver);
