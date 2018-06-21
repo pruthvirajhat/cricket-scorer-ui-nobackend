@@ -25,14 +25,13 @@ const renderCurrentlyBowlingTeamScore = (props) => {
     team = props.score.team1;
     team.name = props.game.team1.name;
   }
-
   return (
     <Row>
       <Col>
         {team.name}
       </Col>
       <Col style={{ textAlign: 'right' }}>
-        {`${team.score}/${team.wickets} in ${team.overs}/${props.game.numberOfOvers}`}
+        { team.overs > 0 ? `${team.score}/${team.wickets} in ${team.overs}/${props.game.numberOfOvers}` : 'Yet to Bat'}
       </Col>
     </Row>
   );
