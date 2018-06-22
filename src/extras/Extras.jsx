@@ -15,16 +15,16 @@ const Extras = props => (
         <label htmlFor="Text">Extras:</label>
       </Col>
       <Col className="text-center w-auto">
-        <Button color="primary" onClick={props.recordExtras}>W</Button>
+        <Button outline color="primary" onClick={props.recordExtras}>W</Button>
       </Col>
       <Col className="text-center w-auto">
-        <Button color="primary" onClick={props.recordExtras}>N</Button>
+        <Button outline color="primary" onClick={props.recordExtras}>N</Button>
       </Col>
       <Col className="text-center w-auto">
-        <Button color="primary" onClick={props.recordExtras}>B</Button>
+        <Button outline color="primary" onClick={props.recordExtras}>B</Button>
       </Col>
       <Col className="text-center w-auto">
-        <Button color="primary" onClick={props.recordExtras}>LB</Button>
+        <Button outline color="primary" onClick={props.recordExtras}>LB</Button>
       </Col>
     </Row>
   </Container>);

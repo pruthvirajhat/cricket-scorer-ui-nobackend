@@ -8,6 +8,7 @@ import PlayerSelector from './PlayerSelector';
 import RunsSelector from './RunsSelector';
 import CurrentOver from '../currentOver/CurrentOver';
 import NextBall from './NextBall';
+import Extras from '../extras/Extras';
 
 const Scorer = props => (
   <div>
@@ -19,6 +20,8 @@ const Scorer = props => (
     <PlayerSelector />
     <br />
     <RunsSelector />
+    <br />
+    <Extras />
     <br />
     <NextBall />
   </div>
