@@ -5,7 +5,7 @@ describe('scorer/currentballreducer', () => {
     const expectedState = {
       batsman: 'Player1.1',
       ballType: 'N',
-      non_striker: '',
+      non_striker: 'Player1.2',
       wicket: '',
       runs: {
         batsman: 0,
@@ -34,7 +34,7 @@ describe('scorer/currentballreducer', () => {
     const expectedState = {
       batsman: 'Player1.1',
       ballType: 'N',
-      non_striker: '',
+      non_striker: 'Player1.2',
       wicket: '',
       runs: {
         batsman: 10,

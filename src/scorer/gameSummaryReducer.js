@@ -3,8 +3,6 @@ import { initialState as gameState } from '../newGame/reducer';
 
 const initialState = {
   innings1: {
-    striker: '',
-    nonStriker: '',
     teamName: gameState.team1.name,
     overs: [{
       bowler: gameState.team2.players[1],

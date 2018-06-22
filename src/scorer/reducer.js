@@ -32,7 +32,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         team2: {
-          ...state.team2, wickets: state.team2.wickets + 1,
+          ...state.team2, wickets: state.team1.wickets + 1,
         },
       };
 

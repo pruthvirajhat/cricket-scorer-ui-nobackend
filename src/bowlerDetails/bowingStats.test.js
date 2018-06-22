@@ -85,7 +85,7 @@ describe('bowlingStats', () => {
 
 
     const expected = [{
-      name: 'name', over: 1.2, maiden: 2, runs: 0, wickets: 8,
+      name: 'name', over: 1.2, maiden: 1, runs: 0, wickets: 8,
     }];
     expect(getBowlingTableDetails(overs)).toEqual(expected);
   });

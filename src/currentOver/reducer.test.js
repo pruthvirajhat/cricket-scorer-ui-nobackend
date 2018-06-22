@@ -12,7 +12,7 @@ describe('currentOver/reducer', () => {
   it('should update ballscount and score when ballType is Normal', () => {
     const expectedState = {
       ballsCount: 1,
-      currentOverScore: ['1'],
+      currentOverScore: ['1(W)'],
     };
     expect(reducer(undefined, { type: 'NEXT_BALL', payload: { ballType: 'N', runs: { batsman: 1, extras: 0 } } })).toEqual(expectedState);
   });
@@ -20,7 +20,7 @@ describe('currentOver/reducer', () => {
   it('should not update ballscount and score when ballType is not N', () => {
     const expectedState = {
       ballsCount: 1,
-      currentOverScore: ['1'],
+      currentOverScore: ['1(W)'],
     };
     expect(reducer({
       ballsCount: 1,
