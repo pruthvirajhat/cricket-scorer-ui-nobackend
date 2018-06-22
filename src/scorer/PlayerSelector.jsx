@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, ButtonGroup, Col } from 'reactstrap';
+import { Button, ButtonGroup } from 'reactstrap';
 import { connect } from 'react-redux';
 import { selectPlayerAction } from './actions';
 
@@ -52,8 +52,8 @@ PlayerSelector.propTypes = {
 };
 
 export const mapStateToProps = state => ({
-  player1: state.gameInformation.team1.players[0],
-  player2: state.gameInformation.team1.players[1],
+  player1: state.currentBall.batsman === '' ? state.gameInformation.team1.players[0] : state.currentBall.batsman,
+  player2: state.currentBall.batsman === '' ? state.gameInformation.team1.players[1] : state.currentBall.non_striker,
   currentBatsman: state.currentBall.batsman,
 });
 

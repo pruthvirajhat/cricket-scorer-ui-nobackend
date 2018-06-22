@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Button from 'reactstrap/lib/Button';
 import { connect } from 'react-redux';
 import Scoreboard from './Scoreboard';

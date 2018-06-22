@@ -18,7 +18,8 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         ballsCount: action.payload.ballType === 'N' ? state.ballsCount + 1 : state.ballsCount,
-        currentOverScore: [...state.currentOverScore, action.payload.runs.batsman.toString()],
+        currentOverScore: [...state.currentOverScore, action.payload.wicket !== '' ? `${action.payload.runs.batsman.toString()}(W)` : action.payload.runs.batsman.toString(),
+        ],
       };
     default:
       return state;

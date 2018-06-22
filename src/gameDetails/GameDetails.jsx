@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import ScoreBoard from '../scorer/Scoreboard';
 import BowlerDetails from '../bowlerDetails/BowlerDetails';
 import BatsmanDetails from '../batsmanDetails/BatsmanDetails';

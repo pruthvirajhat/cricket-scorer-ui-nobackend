@@ -1,5 +1,3 @@
-
-
 export function getBowlingTableDetails(overs) {
   const map = new Map();
 
@@ -13,12 +11,12 @@ export function getBowlingTableDetails(overs) {
       deliveriesLength += 1;
     });
 
-    const maidens = deliveriesLength > 1 && runs === 0 ? 1 : 0;
+    const maidens = deliveriesLength > 5 && runs === 0 ? 1 : 0;
 
-    const oversCount = deliveriesLength === 6 ? 1 : +(deliveriesLength / 10).toFixed(1);
-    if (map.get(over.bowler) === undefined) {
+    const overCount = deliveriesLength === 6 ? 1 : +(deliveriesLength / 10).toFixed(1);
+    if (!map.get(over.bowler)) {
       map.set(over.bowler, {
-        over: oversCount, maiden: maidens, runs, wickets,
+        over: overCount, maiden: maidens, runs, wickets,
       });
     } else {
       const prevOver = map.get(over.bowler).over;
@@ -26,7 +24,7 @@ export function getBowlingTableDetails(overs) {
       const prevRuns = map.get(over.bowler).runs;
       const prevWickets = map.get(over.bowler).wickets;
       map.set(over.bowler, {
-        over: oversCount + prevOver,
+        over: overCount + prevOver,
         maiden: maidens + prevMaiden,
         runs: runs + prevRuns,
         wickets: wickets + prevWickets,
